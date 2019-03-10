@@ -1,0 +1,10 @@
+<ul>
+    {% for document in documents %}
+    <li>
+        <a href = "{{ document.urn }}"
+           download = "{{ document.filename }}">
+           {{ document.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

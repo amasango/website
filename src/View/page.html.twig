@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>
+            {{ page.heading }} | Amasango
+        </title>
+        {% for stylesheet in page.stylesheets %}
+        <link rel = "stylesheet"
+              href = "{{ stylesheet }}">
+        {% endfor %}
+        <link rel = "icon"
+              href = "{{ page.icon }}">
+    </head>
+    <body id = "content">
+        <header>
+            <a href = "{{ page.header.urn }}">
+                <img src = "{{ page.header.image.src }}"
+                     alt = "{{ page.header.image.alt }}">
+            </a>
+            <nav>
+                <ul>
+                    {% for label, urn in page.nav %}
+                    <li>
+                        <a href = "{{ urn }}">
+                            {{ label }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            <h1>
+                {{ page.heading }}
+            </h1>
+        </header>
+        <main>
+            <nav>
+                <ul>
+                    {% for content in page.main %}
+                    <li>
+                        <a href = "#{{ content.urn }}">
+                            {{ content.heading }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            <section>
+                {% for content in page.main %}
+                <article id = "{{ content.urn }}">
+                    <h2>
+                        {{ content.heading }}
+                    </h2>
+                    <section>
+                        {{ content.body | raw }}
+                    </section>
+                </article>
+                {% endfor %}
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    {% for label, urn in page.footer.nav %}
+                    <li>
+                        <a href = "{{ urn }}">
+                            {{ label }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            <small>
+                {{ page.footer.small }}
+            </small>
+        </footer>
+    </body>
+</html>

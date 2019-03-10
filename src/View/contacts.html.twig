@@ -1,0 +1,28 @@
+<address>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Contact
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>
+                    {{ contact.type }}
+                </td>
+                <td>
+                    <a href = "{{ contact.url }}">
+                        {{ contact.display | raw }}
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</address>

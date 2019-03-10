@@ -1,0 +1,16 @@
+<ul>
+    {% for trustee in board %}
+    <li>
+        <figure>
+            <img src = "{{ trustee.image }}"
+                 alt = "Portrait of {{ trustee.name }}">
+            <figcaption>
+                <a href = "{{ trustee.cv }}"
+                   download = "CV of {{ trustee.name }}.pdf">
+                    {{ trustee.name }}
+                </a>
+            </figcaption>
+        </figure>
+    </li>
+    {% endfor %}
+</ul>

@@ -21,5 +21,13 @@
         "psr-4": {
             "Amasango\\": "src/"
         }
+    },
+    "scripts": {
+        "run": "@php -S localhost:3000",
+        "clean": "rm -rf src/View/Cache",
+        "test": [
+            "@clean",
+            "@run"
+        ]
     }
 }

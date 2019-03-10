@@ -1,0 +1,23 @@
+body {
+    background-color: #fafafa;
+}
+
+a {
+    color: #25a;
+}
+
+/*h1 {
+    color: #eb1b24;
+}*/
+
+main article a {
+    color: #25a;
+}
+
+article h2 {
+    color: #ea018b;
+}
+
+a:hover {
+    color: #ea018b;
+}
